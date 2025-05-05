@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gas Station Management{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gas Station Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('products.index') }}">Products</a></li>
+                <li><a href="{{ url_for('users.index') }}">Users</a></li>
+                <li><a href="{{ url_for('tickets.index') }}">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} Gas Station Management System</p>
+    </footer>
+</body>
+</html>
